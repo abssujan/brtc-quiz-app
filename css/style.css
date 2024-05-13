@@ -47,3 +47,28 @@ input{
     color: aliceblue;
     cursor: pointer;
 }
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.result h2 {
+    color: #8E44AD;
+}
+.result p {
+    margin-top: 1rem;
+    font-size: 17px;
+    color: #DC7633;
+}
+.reload-btn{
+    margin-top: 1rem;
+    padding: 10px 25px;
+    background-color: #6495ED;
+    border: none;
+    border-radius: 5px;
+    color: aliceblue;
+    cursor: pointer;
+}
