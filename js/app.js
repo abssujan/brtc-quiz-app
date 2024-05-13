@@ -48,7 +48,7 @@ const brtcQuiz = [
 //console.log(brtcQuiz[0])
 
 // get elements
-
+const quiz = document.querySelector("#quiz")
 const answerElement = document.querySelectorAll(".answer");
 const [questionElement, option_1, option_2, option_3, option_4] = document.querySelectorAll("#question, .option_1, .option_2, .option_3, .option_4");
 const submitBtn = document.getElementById("submit");
@@ -84,9 +84,29 @@ const getSelectedOption = () => {
     return ans_index;
 }
 
+const deselectedAnswers = () => {
+    answerElement.forEach(currentElement => currentElement.checked = false);
+}
+
 //click event
 
 submitBtn.addEventListener('click', () => {
     const seletedOptionIndex = getSelectedOption();
-    console.log(seletedOptionIndex)
+    console.log(seletedOptionIndex);
+
+    if( seletedOptionIndex === brtcQuiz[currentQuiz].correct){
+        socre = socre + 1 ;
+    }
+    currentQuiz++;
+    if(currentQuiz < brtcQuiz.length){
+        deselectedAnswers()
+        loadQuiz()
+    }else {
+        quiz.innerHTML = `
+        <div class="result">
+        <h2> Your Socre: ${socre}/${brtcQuiz.length} Correct Answers</h2>
+        <p> Congratulations on completing the quiz!</p>
+        <button class="reload-btn" onclick="location.reload()">Play Again</button> 
+        `
+    }
 })
