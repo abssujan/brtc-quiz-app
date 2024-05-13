@@ -44,3 +44,5 @@ const brtcQuiz = [
         correct: 0
     },
 ]
+
+console.log(brtcQuiz[0])
