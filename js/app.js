@@ -53,7 +53,7 @@ const answerElement = document.querySelectorAll(".answer");
 const [questionElement, option_1, option_2, option_3, option_4] = document.querySelectorAll("#question, .option_1, .option_2, .option_3, .option_4");
 const submitBtn = document.getElementById("submit");
 
-let currentQuiz = 2;
+let currentQuiz = 0;
 let socre = 0;
 
 // loadQuiz function 
@@ -73,3 +73,20 @@ const loadQuiz = () => {
 }
 
 loadQuiz()
+
+const getSelectedOption = () => {
+    let ans_index;
+    answerElement.forEach((currentOption, index) => {
+        if(currentOption.checked){
+             ans_index = index
+        }
+    })
+    return ans_index;
+}
+
+//click event
+
+submitBtn.addEventListener('click', () => {
+    const seletedOptionIndex = getSelectedOption();
+    console.log(seletedOptionIndex)
+})
