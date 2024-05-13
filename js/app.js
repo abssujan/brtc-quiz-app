@@ -52,3 +52,24 @@ const brtcQuiz = [
 const answerElement = document.querySelectorAll(".answer");
 const [questionElement, option_1, option_2, option_3, option_4] = document.querySelectorAll("#question, .option_1, .option_2, .option_3, .option_4");
 const submitBtn = document.getElementById("submit");
+
+let currentQuiz = 2;
+let socre = 0;
+
+// loadQuiz function 
+
+const loadQuiz = () => {
+    //data distructuring
+    const {question, options} = brtcQuiz[currentQuiz];
+    questionElement.textContent = question;
+
+    options.forEach((currentOption, index) =>(window[`option_${index + 1}`].innerText = currentOption))
+    // options.forEach((currentOption, index) => {
+    //     const optionElement = document.querySelector(`.option_${index + 1}`);
+    //     console.log(optionElement)
+    //     //optionElement.innerText = currentOption;
+    // });
+    
+}
+
+loadQuiz()
