@@ -45,4 +45,10 @@ const brtcQuiz = [
     },
 ]
 
-console.log(brtcQuiz[0])
+//console.log(brtcQuiz[0])
+
+// get elements
+
+const answerElement = document.querySelectorAll(".answer");
+const [questionElement, option_1, option_2, option_3, option_4] = document.querySelectorAll("#question, .option_1, .option_2, .option_3, .option_4");
+const submitBtn = document.getElementById("submit");
